@@ -13,10 +13,12 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.EditText;
 
 public class HttpFun extends Activity {
 
     private TextView textView;
+    private EditText targetUrl;
 
     /** Called when the activity is first created. */
     @Override
@@ -24,6 +26,7 @@ public class HttpFun extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
         textView = (TextView) findViewById(R.id.TextView01);
+        targetUrl = (EditText) findViewById(R.id.url);
     }
 
     private class DownloadWebPageTask extends AsyncTask<String, Void, String> {
@@ -59,7 +62,7 @@ public class HttpFun extends Activity {
 
     public void readWebpage(View view) {
         DownloadWebPageTask task = new DownloadWebPageTask();
-        task.execute(new String[] { "http://www.vogella.de" });
+        task.execute(new String[] { "http://"+targetUrl.getText().toString() });
 
     }
 }
