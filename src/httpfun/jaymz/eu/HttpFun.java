@@ -3,6 +3,7 @@ package httpfun.jaymz.eu;
 import java.io.BufferedReader;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.util.regex.*;
 
 import org.apache.http.HttpResponse;
 import org.apache.http.client.methods.HttpGet;
